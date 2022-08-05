@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid" style="margin: 15; padding:0;">
+    <div class="row">
+        <div class="col-lg-4" style="margin: 25; padding:0;" >
+            <h2 class="account-heading" style="text-align:left; font-size: 40px;padding-top: 150px; font-weight: 700; color: #473434;margin-left: 10%;font-family: 'Poppins', sans-serif;">{{ current_user.name }}</h2>
+            <p class="text-secondary" style="font-size: 20px; text-align: left; padding-top: 50px; font-weight: 500; color: #473434; margin-left: 10%;font-family: 'Poppins', sans-serif;">Phone : {{ current_user.phone }}</p>
+            <p class="text-secondary" style="font-size: 20px; text-align: left; padding-top: 10px; font-weight: 500; color: #473434; margin-left: 10%;font-family: 'Poppins', sans-serif;">Email : {{ current_user.email }}</p>
+        </div>
+        <div class="col-lg-8">
+            <img src="https://wallpaperaccess.com/full/6688071.jpg"
+                alt="" style="height: 100vh; width: 100%;object-fit: cover;">
+        </div> 
+    </div>
+</div>
+{% endblock %}

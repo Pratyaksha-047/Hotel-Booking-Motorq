@@ -1,0 +1,58 @@
+body{
+    background-color: #f0eee8;
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    font-family: "raleway";
+  }
+
+  .posts{
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0 40px 100px;
+    font-family: "raleway";
+}
+
+  .each-book{
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .media-body{
+    margin-left: 50px;
+  }
+
+  .postDesc{
+    width: 60vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.underline-small-footer{
+    margin-bottom: 50px;
+    display:inline-block;
+    position:relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    }
+    .underline-small-footer::after{
+    content:'';
+    height:3px;
+    width:70%;
+    background:  #725a4e;
+    position:absolute;
+    right: 30%;
+    bottom:-15px;
+    }
+
+    .btn {
+      background-color:  #725a4e;
+      border: none;
+      color: white;
+      /* border-radius: 25px; */
+      padding: 10px 50px;
+      margin: 30px 0;
+      box-shadow: 2px 2px 5px #949090;
+  }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <title>
+    Hotel-Booking
+  </title>
+  {% block head %} {% block title %}{% endblock %} {% endblock %}
+</head>
+<header>
+	<!--- Navbar -->
+	<nav class="navbar navbar-expand-lg" style="background-color:#725a4e">
+		<div class="container">
+			<div class="collapse navbar-collapse" id="nvbCollapse">
+				<ul class="navbar-nav ml-auto">
+          <li class="nav-item pl-1">
+            <a class="nav-link" style="color: white" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="{{ url_for('book_hotel') }}">Book Hotel</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" style="color:white" href="{{ url_for('map_view') }}">Map view</a>
+            </li>
+          {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="{{ url_for('bookings') }}">View Bookings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="{{ url_for('account') }}">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="{{ url_for('logout') }}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white" href="{{ url_for('register') }}">Register</a>
+          </li>
+          {% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--# Navbar #-->
+	</header>
+  <body>
+    {% block content %} {% endblock %}
+  </body>
+
+
+</html>

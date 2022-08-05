@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/hotel.css')}}">
+{% endblock %}
+
+{% block content %}
+<h1 class="underline-small-footer"
+  style="font-size: 50px; text-align: center; padding-top: 50px; font-weight: 700; color: #70442d; margin-left: 30%;">
+  Available Hotels</h1>
+<div class="container posts">
+  <form class="form-inline my-2 my-lg-0" method="GET" style="margin: 30px; margin-left: 25%;">
+    <input class = "form-control mr-sm-2"
+    type="search" placeholder="Search" name="q" style="width: 400px; padding: 10px 30px;">
+    <button class="btn btn-dark my-2 my-sm-0" type="submit">Search by City</button>
+  </form>
+  {% for hotel in hotels %}
+  <div class="each-book">
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="row">
+          <div class="col-lg-6" style="margin:0; padding:0;" >
+        <div class="article-metadata">
+          <a class="mr-2" href="{{ url_for('hotel_info',hotel_id=hotel.id)}}" style="font-size: 30px; color: #70442d; font-weight: 600;">Hotel {{hotel.name}}</a></br>
+        </div>
+        <p class="postDesc">City:{{ hotel.city }}</p>
+        <p class="article-content">Availablility:{{ hotel.availability }}</p>
+        <p class="postDesc">Price:{{ hotel.price }}</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="https://c4.wallpaperflare.com/wallpaper/451/186/556/best-hotels-booking-pool-vacation-wallpaper-preview.jpg"
+                alt="" style="height: 30vh; width: 100%;object-fit: cover;">
+        </div> 
+      </div>
+    </article>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

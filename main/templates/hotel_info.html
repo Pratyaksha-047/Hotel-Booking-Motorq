@@ -1,0 +1,139 @@
+{% extends "base.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename='css/hotel_info.css')}}"
+/>
+{% endblock %} {% block content %}
+<div class="container-fluid" style="margin: 10; padding: 0">
+  <div class="row">
+    <div
+      class="col-lg-3"
+      style="
+        text-align: left;
+        font-size: 20px;
+        padding-top: 50px;
+        font-weight: 700;
+        color: #473434;
+        margin-left: 5%;
+        font-family: 'Poppins', sans-serif;
+      "
+    >
+      <h2
+        class="account-heading"
+        style="
+          text-align: left;
+          font-size: 40px;
+          padding-top: 50px;
+          font-weight: 700;
+          margin-left: 10%;
+          font-family: 'Poppins', sans-serif;
+        "
+      >
+        {{hotel.name }}
+      </h2>
+      <p class="text-secondary">Phone no.: {{ hotel.phone}}</p>
+      <p class="text-secondary">City: {{ hotel.city }}</p>
+      <p class="text-secondary">Availablility: {{ hotel.availability }}</p>
+      <p class="text-secondary">Price: {{ hotel.price }}</p>
+      <p class="text-secondary">Description: {{ hotel.description }}</p>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="https://wallpaperaccess.com/full/6688071.jpg"
+        alt=""
+        style="height: 100vh; width: 100%; object-fit: cover"
+      />
+    </div>
+    <div
+      class="col-lg-4"
+      style="
+        text-align: left;
+        font-size: 20px;
+        padding-top: 50px;
+        font-weight: 700;
+        color: #473434;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      "
+    >
+      <form
+        action="{{ url_for('hotel_info',hotel_id=hotel.id)}}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <fieldset class="form-group">
+          <div class="form-group">
+            <h2
+              style="
+                text-align: center;
+                font-size: 40px;
+                padding-top: 50px;
+                font-weight: 700;
+                font-family: 'Poppins', sans-serif;
+              "
+            >
+              Book Room
+            </h2>
+            <label for="rooms">No. of Rooms</label>
+            <div class="form">
+              <input
+                type="number"
+                placeholder="Enter No. of Rooms"
+                name="Rooms"
+                value=""
+              />
+            </div>
+            <label for="arrival">Arrival</label>
+            <div class="form">
+              <input
+                type="date"
+                placeholder="Enter Arrival date"
+                name="Arrival"
+                value=""
+              />
+            </div>
+            <label for="departre">Departure</label>
+            <div class="form">
+              <input
+                type="date"
+                placeholder="Enter Departure date"
+                name="Departure"
+                value=""
+              />
+            </div>
+            <div class="button">
+              <button
+                class="bttn"
+                name="Submit_B"
+                type="submit"
+                value="message"
+                style="background-color: #725a4e;
+                width: 100%;
+                border: none;
+                color: white;
+                padding: 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin-left=10px"
+              >
+                Book rooms
+              </button>
+            </div>
+
+            {% if send=="success" %}
+            <div class="mail">Rooms booked successfully</div>
+            {% elif send=="not success" %}
+            <div class="mail">Booking failed</div>
+            {% endif %}
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
