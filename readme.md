@@ -12,5 +12,7 @@ To run this repository on your local system:
 </br>
 4.Then run "run.py". file
 </br>
+## Project video
+[![Watch the video](https://drive.google.com/file/d/1wJoR8QzxRzN80FQ8Ae3J-njbxWyIlSSp/view?usp=sharing)](https://youtu.be/tDd6AflPioE)
 
 ### Project video link: https://drive.google.com/file/d/1vPkJD-qQ-rfATK7afeHErYvFMsyUhJ5B/view?usp=sharing
