@@ -11,3 +11,6 @@ To run this repository on your local system:
 3.pip install requirements.txt
 </br>
 4.Then run "run.py". file
+</br>
+
+### Project video link: https://drive.google.com/file/d/1vPkJD-qQ-rfATK7afeHErYvFMsyUhJ5B/view?usp=sharing
